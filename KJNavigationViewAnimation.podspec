@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'KJNavigationViewAnimation'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of KJNavigationViewAnimation.'
+  s.summary          = 'KJNavigationViewAnimation provides navigation view auto animation & blurring'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,14 +19,15 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
+This library provides custom navigation bar view library, which auto animates and blurrs based on scrolling of Tableview, Collectionview or Scrollview.
                        DESC
 
-  s.homepage         = 'https://github.com/bluelabeldeveloper1/KJNavigationViewAnimation'
+  s.homepage         = 'https://github.com/KiranJasvanee/KJNavigationViewAnimation'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'bluelabeldeveloper1' => 'kiran.jasvanee@yahoo.com' }
-  s.source           = { :git => 'https://github.com/bluelabeldeveloper1/KJNavigationViewAnimation.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Kiran Jasvanee' => 'kiran.jasvanee@yahoo.com' }
+  s.source           = { :git => 'https://github.com/KiranJasvanee/KJNavigationViewAnimation.git', :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/KiranJasvanee'
 
   s.ios.deployment_target = '8.0'
 
