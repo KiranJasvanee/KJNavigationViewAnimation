@@ -1,18 +1,18 @@
 {
   "name": "KJNavigationViewAnimation",
   "version": "0.1.0",
-  "summary": "A short description of KJNavigationViewAnimation.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/bluelabeldeveloper1/KJNavigationViewAnimation",
+  "summary": "KJNavigationViewAnimation provides navigation view auto animation & blurring",
+  "description": "TODO: Add long description of the pod here.\nThis library provides custom navigation bar view library, which auto animates and blurrs based on scrolling of Tableview, Collectionview or Scrollview.",
+  "homepage": "https://github.com/KiranJasvanee/KJNavigationViewAnimation",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "bluelabeldeveloper1": "kiran.jasvanee@yahoo.com"
+    "Kiran Jasvanee": "kiran.jasvanee@yahoo.com"
   },
   "source": {
-    "git": "https://github.com/bluelabeldeveloper1/KJNavigationViewAnimation.git",
+    "git": "https://github.com/KiranJasvanee/KJNavigationViewAnimation.git",
     "tag": "0.1.0"
   },
   "platforms": {

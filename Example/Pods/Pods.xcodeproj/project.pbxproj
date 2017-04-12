@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C67AA25DFDAA78E6B4762D7178ABEEB /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4483F8BF3EE9D51F54B6AB804F89145 /* ReplaceMe.swift */; };
 		2D9E8D249E40966E51004715F28C746B /* Pods-KJNavigationViewAnimation_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E257A3B1EA56F4416C642B1FA2008 /* Pods-KJNavigationViewAnimation_Example-dummy.m */; };
 		45C0F034F4EB5F3D4B80C50E46A99CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		56F2B2AA930864F72F1732E982CBF928 /* KJNavigationViewAnimation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B5B29407AE2C89EB3AB4AA19ADFAB2 /* KJNavigationViewAnimation-dummy.m */; };
+		87244EBA7D25C50327699951DA8F7315 /* KJNavigationViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568A86715F7AAB68B8204BF82B86550B /* KJNavigationViewAnimation.swift */; };
 		923ADEA814CC2435F5C9DAD7043589AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		BB0B4FD93B2B7183D323D7619736E677 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		BD3391700E3CC13C50A4BA3ABAB339C0 /* Pods-KJNavigationViewAnimation_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7116F1934DBD5959A6BC5DC921E5B25F /* Pods-KJNavigationViewAnimation_Tests-dummy.m */; };
+		C75110AD6666DDA02AA3D8E1653E3267 /* KJNavigationViewAnimation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B5B29407AE2C89EB3AB4AA19ADFAB2 /* KJNavigationViewAnimation-dummy.m */; };
 		D6220B05D3ACFE557B653E94CA2BE7E9 /* KJNavigationViewAnimation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F082FED2F3C464474B2B4526968443BF /* KJNavigationViewAnimation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBB10288F4EAD11EB6B84415D6CC709A /* Pods-KJNavigationViewAnimation_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B18F7C22D426B259F6FFCAF5DD9FC7A /* Pods-KJNavigationViewAnimation_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF5A35CBDB7887BBBBA2483534B7FD06 /* Pods-KJNavigationViewAnimation_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF2B3AB07A94592BA126EA55E90BDE8 /* Pods-KJNavigationViewAnimation_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +41,7 @@
 		3DDF92BE627B040D46391E08BCC4CCF6 /* Pods-KJNavigationViewAnimation_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KJNavigationViewAnimation_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		4BA0BAF60A53D7C5646FF707E443EC8E /* Pods_KJNavigationViewAnimation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KJNavigationViewAnimation_Example.framework; path = "Pods-KJNavigationViewAnimation_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53184919D3F71509C14F2CC3A3C2E616 /* Pods-KJNavigationViewAnimation_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KJNavigationViewAnimation_Tests.modulemap"; sourceTree = "<group>"; };
+		568A86715F7AAB68B8204BF82B86550B /* KJNavigationViewAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KJNavigationViewAnimation.swift; sourceTree = "<group>"; };
 		5EAD2B2B03004363DAB2127D3DE4C4E9 /* Pods-KJNavigationViewAnimation_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KJNavigationViewAnimation_Tests-resources.sh"; sourceTree = "<group>"; };
 		6D4F5B5B439A5CD5AA75D7ED3D814ABB /* Pods-KJNavigationViewAnimation_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KJNavigationViewAnimation_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7116F1934DBD5959A6BC5DC921E5B25F /* Pods-KJNavigationViewAnimation_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KJNavigationViewAnimation_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		D0D489692F797DEFD384FCB02E59D7CB /* KJNavigationViewAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KJNavigationViewAnimation.framework; path = KJNavigationViewAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B2B51CB6409C5583FAB4D0848003C /* Pods-KJNavigationViewAnimation_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KJNavigationViewAnimation_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DBE36C5C6992CD575D024BB9797B40C2 /* Pods-KJNavigationViewAnimation_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KJNavigationViewAnimation_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		E4483F8BF3EE9D51F54B6AB804F89145 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		E5B5B29407AE2C89EB3AB4AA19ADFAB2 /* KJNavigationViewAnimation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KJNavigationViewAnimation-dummy.m"; sourceTree = "<group>"; };
 		EF7A6296618F2C9714C15D5A019D139C /* Pods_KJNavigationViewAnimation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KJNavigationViewAnimation_Tests.framework; path = "Pods-KJNavigationViewAnimation_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F082FED2F3C464474B2B4526968443BF /* KJNavigationViewAnimation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KJNavigationViewAnimation-umbrella.h"; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		67F0B242DA3156B17B82455EF6C721FE /* KJNavigationViewAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				E1783DDACB2FA610C5D29AC26777A8BF /* Classes */,
+				B857A2659E457DCB4861DBC2215356A1 /* Classes */,
 			);
 			name = KJNavigationViewAnimation;
 			path = KJNavigationViewAnimation;
@@ -150,6 +150,15 @@
 			);
 			name = KJNavigationViewAnimation;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		B857A2659E457DCB4861DBC2215356A1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				568A86715F7AAB68B8204BF82B86550B /* KJNavigationViewAnimation.swift */,
+			);
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -186,15 +195,6 @@
 				EF7A6296618F2C9714C15D5A019D139C /* Pods_KJNavigationViewAnimation_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E1783DDACB2FA610C5D29AC26777A8BF /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E4483F8BF3EE9D51F54B6AB804F89145 /* ReplaceMe.swift */,
-			);
-			name = Classes;
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		E637E745FDDA8BA154E901D970D125E6 /* Targets Support Files */ = {
@@ -258,7 +258,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5159966C4547E4A1500CFF4FF4AE4D53 /* Build configuration list for PBXNativeTarget "KJNavigationViewAnimation" */;
 			buildPhases = (
-				03D8C3F48FB3D7DD63E02514B2A82C77 /* Sources */,
+				1145A960E2BED09088F713C2E1454902 /* Sources */,
 				0C3636A8A1376B912D3E30CE1AAE05BD /* Frameworks */,
 				95E31B1A8331C456476D04D76C1EF50B /* Headers */,
 			);
@@ -335,12 +335,12 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		03D8C3F48FB3D7DD63E02514B2A82C77 /* Sources */ = {
+		1145A960E2BED09088F713C2E1454902 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56F2B2AA930864F72F1732E982CBF928 /* KJNavigationViewAnimation-dummy.m in Sources */,
-				2C67AA25DFDAA78E6B4762D7178ABEEB /* ReplaceMe.swift in Sources */,
+				C75110AD6666DDA02AA3D8E1653E3267 /* KJNavigationViewAnimation-dummy.m in Sources */,
+				87244EBA7D25C50327699951DA8F7315 /* KJNavigationViewAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
