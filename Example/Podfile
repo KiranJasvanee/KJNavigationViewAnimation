@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KJNavigationViewAnimation_Example' do
+  pod 'KJNavigationViewAnimation', :path => '../'
+
+  target 'KJNavigationViewAnimation_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
