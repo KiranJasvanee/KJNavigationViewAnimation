@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C67AA25DFDAA78E6B4762D7178ABEEB /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4483F8BF3EE9D51F54B6AB804F89145 /* ReplaceMe.swift */; };
+		2D9E8D249E40966E51004715F28C746B /* Pods-KJNavigationViewAnimation_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E257A3B1EA56F4416C642B1FA2008 /* Pods-KJNavigationViewAnimation_Example-dummy.m */; };
+		45C0F034F4EB5F3D4B80C50E46A99CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		56F2B2AA930864F72F1732E982CBF928 /* KJNavigationViewAnimation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B5B29407AE2C89EB3AB4AA19ADFAB2 /* KJNavigationViewAnimation-dummy.m */; };
+		923ADEA814CC2435F5C9DAD7043589AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		BB0B4FD93B2B7183D323D7619736E677 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		BD3391700E3CC13C50A4BA3ABAB339C0 /* Pods-KJNavigationViewAnimation_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7116F1934DBD5959A6BC5DC921E5B25F /* Pods-KJNavigationViewAnimation_Tests-dummy.m */; };
+		D6220B05D3ACFE557B653E94CA2BE7E9 /* KJNavigationViewAnimation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F082FED2F3C464474B2B4526968443BF /* KJNavigationViewAnimation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBB10288F4EAD11EB6B84415D6CC709A /* Pods-KJNavigationViewAnimation_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B18F7C22D426B259F6FFCAF5DD9FC7A /* Pods-KJNavigationViewAnimation_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF5A35CBDB7887BBBBA2483534B7FD06 /* Pods-KJNavigationViewAnimation_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF2B3AB07A94592BA126EA55E90BDE8 /* Pods-KJNavigationViewAnimation_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA5721A598ADFA760D5156C84B027E8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05CB50B67627FDF368CB9C71FB1CC03C;
+			remoteInfo = KJNavigationViewAnimation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		039CF65089D54CB5533CA7CC9B0975D5 /* Pods-KJNavigationViewAnimation_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KJNavigationViewAnimation_Example-resources.sh"; sourceTree = "<group>"; };
+		0AF2B3AB07A94592BA126EA55E90BDE8 /* Pods-KJNavigationViewAnimation_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KJNavigationViewAnimation_Example-umbrella.h"; sourceTree = "<group>"; };
+		0B18F7C22D426B259F6FFCAF5DD9FC7A /* Pods-KJNavigationViewAnimation_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KJNavigationViewAnimation_Tests-umbrella.h"; sourceTree = "<group>"; };
+		0EAA5586F8CC87E3664ECE2BADC9FEC4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16BEE783191990DEB69D25D9308B751F /* Pods-KJNavigationViewAnimation_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KJNavigationViewAnimation_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		22091D6F2A8D0B12F999DA0A67B9A410 /* Pods-KJNavigationViewAnimation_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KJNavigationViewAnimation_Example-frameworks.sh"; sourceTree = "<group>"; };
+		3A8CB7FB2C556DEFAFE685A34DEC94FA /* Pods-KJNavigationViewAnimation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KJNavigationViewAnimation_Example.release.xcconfig"; sourceTree = "<group>"; };
+		3ADC70C44E5380A488A9EA02193B0277 /* KJNavigationViewAnimation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KJNavigationViewAnimation-prefix.pch"; sourceTree = "<group>"; };
+		3DDF92BE627B040D46391E08BCC4CCF6 /* Pods-KJNavigationViewAnimation_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KJNavigationViewAnimation_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		4BA0BAF60A53D7C5646FF707E443EC8E /* Pods_KJNavigationViewAnimation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KJNavigationViewAnimation_Example.framework; path = "Pods-KJNavigationViewAnimation_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53184919D3F71509C14F2CC3A3C2E616 /* Pods-KJNavigationViewAnimation_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KJNavigationViewAnimation_Tests.modulemap"; sourceTree = "<group>"; };
+		5EAD2B2B03004363DAB2127D3DE4C4E9 /* Pods-KJNavigationViewAnimation_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KJNavigationViewAnimation_Tests-resources.sh"; sourceTree = "<group>"; };
+		6D4F5B5B439A5CD5AA75D7ED3D814ABB /* Pods-KJNavigationViewAnimation_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KJNavigationViewAnimation_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		7116F1934DBD5959A6BC5DC921E5B25F /* Pods-KJNavigationViewAnimation_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KJNavigationViewAnimation_Tests-dummy.m"; sourceTree = "<group>"; };
+		72A84B60AA5C32CEC8408C4DF9508800 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73C496822F87553277B4233D30D436A7 /* Pods-KJNavigationViewAnimation_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KJNavigationViewAnimation_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7B9E257A3B1EA56F4416C642B1FA2008 /* Pods-KJNavigationViewAnimation_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KJNavigationViewAnimation_Example-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9CBA2D784E51FFAD30BB89165711552F /* KJNavigationViewAnimation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KJNavigationViewAnimation.xcconfig; sourceTree = "<group>"; };
+		A58B4E77ECA2499600022543E0AA07E5 /* KJNavigationViewAnimation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = KJNavigationViewAnimation.modulemap; sourceTree = "<group>"; };
+		C3E0E9DD90D55F15A733E5532A59E729 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5239400E185205239D5D77B440AB3BF /* Pods-KJNavigationViewAnimation_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KJNavigationViewAnimation_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C8B0D08DC1FA6F6D62BD19E723441A62 /* Pods-KJNavigationViewAnimation_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KJNavigationViewAnimation_Example.modulemap"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D0D489692F797DEFD384FCB02E59D7CB /* KJNavigationViewAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KJNavigationViewAnimation.framework; path = KJNavigationViewAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87B2B51CB6409C5583FAB4D0848003C /* Pods-KJNavigationViewAnimation_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KJNavigationViewAnimation_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DBE36C5C6992CD575D024BB9797B40C2 /* Pods-KJNavigationViewAnimation_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KJNavigationViewAnimation_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		E4483F8BF3EE9D51F54B6AB804F89145 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		E5B5B29407AE2C89EB3AB4AA19ADFAB2 /* KJNavigationViewAnimation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KJNavigationViewAnimation-dummy.m"; sourceTree = "<group>"; };
+		EF7A6296618F2C9714C15D5A019D139C /* Pods_KJNavigationViewAnimation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KJNavigationViewAnimation_Tests.framework; path = "Pods-KJNavigationViewAnimation_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F082FED2F3C464474B2B4526968443BF /* KJNavigationViewAnimation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KJNavigationViewAnimation-umbrella.h"; sourceTree = "<group>"; };
+		FB4909A0A86680577A81F112720F0E5D /* Pods-KJNavigationViewAnimation_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KJNavigationViewAnimation_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C3636A8A1376B912D3E30CE1AAE05BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C0F034F4EB5F3D4B80C50E46A99CC5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBF532CBBC8E3FAC7DDB88F6E9EC14B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0B4FD93B2B7183D323D7619736E677 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD01EA2807DB4918D160110C4867AC30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923ADEA814CC2435F5C9DAD7043589AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		093C750E6E209CA34D6AEC853FC0ACCA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A0252BB6688937D828BB214F052AE04 /* KJNavigationViewAnimation */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		644223A58CAC5121F747AB684C311817 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0EAA5586F8CC87E3664ECE2BADC9FEC4 /* Info.plist */,
+				A58B4E77ECA2499600022543E0AA07E5 /* KJNavigationViewAnimation.modulemap */,
+				9CBA2D784E51FFAD30BB89165711552F /* KJNavigationViewAnimation.xcconfig */,
+				E5B5B29407AE2C89EB3AB4AA19ADFAB2 /* KJNavigationViewAnimation-dummy.m */,
+				3ADC70C44E5380A488A9EA02193B0277 /* KJNavigationViewAnimation-prefix.pch */,
+				F082FED2F3C464474B2B4526968443BF /* KJNavigationViewAnimation-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/KJNavigationViewAnimation";
+			sourceTree = "<group>";
+		};
+		67F0B242DA3156B17B82455EF6C721FE /* KJNavigationViewAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				E1783DDACB2FA610C5D29AC26777A8BF /* Classes */,
+			);
+			name = KJNavigationViewAnimation;
+			path = KJNavigationViewAnimation;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				093C750E6E209CA34D6AEC853FC0ACCA /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				DBC94F7262656372CBCFD6487E319D10 /* Products */,
+				E637E745FDDA8BA154E901D970D125E6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9A0252BB6688937D828BB214F052AE04 /* KJNavigationViewAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				67F0B242DA3156B17B82455EF6C721FE /* KJNavigationViewAnimation */,
+				644223A58CAC5121F747AB684C311817 /* Support Files */,
+			);
+			name = KJNavigationViewAnimation;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDA402C9E95CED9420FFC39C15D0DE82 /* Pods-KJNavigationViewAnimation_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				72A84B60AA5C32CEC8408C4DF9508800 /* Info.plist */,
+				53184919D3F71509C14F2CC3A3C2E616 /* Pods-KJNavigationViewAnimation_Tests.modulemap */,
+				73C496822F87553277B4233D30D436A7 /* Pods-KJNavigationViewAnimation_Tests-acknowledgements.markdown */,
+				16BEE783191990DEB69D25D9308B751F /* Pods-KJNavigationViewAnimation_Tests-acknowledgements.plist */,
+				7116F1934DBD5959A6BC5DC921E5B25F /* Pods-KJNavigationViewAnimation_Tests-dummy.m */,
+				DBE36C5C6992CD575D024BB9797B40C2 /* Pods-KJNavigationViewAnimation_Tests-frameworks.sh */,
+				5EAD2B2B03004363DAB2127D3DE4C4E9 /* Pods-KJNavigationViewAnimation_Tests-resources.sh */,
+				0B18F7C22D426B259F6FFCAF5DD9FC7A /* Pods-KJNavigationViewAnimation_Tests-umbrella.h */,
+				C5239400E185205239D5D77B440AB3BF /* Pods-KJNavigationViewAnimation_Tests.debug.xcconfig */,
+				6D4F5B5B439A5CD5AA75D7ED3D814ABB /* Pods-KJNavigationViewAnimation_Tests.release.xcconfig */,
+			);
+			name = "Pods-KJNavigationViewAnimation_Tests";
+			path = "Target Support Files/Pods-KJNavigationViewAnimation_Tests";
+			sourceTree = "<group>";
+		};
+		DBC94F7262656372CBCFD6487E319D10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0D489692F797DEFD384FCB02E59D7CB /* KJNavigationViewAnimation.framework */,
+				4BA0BAF60A53D7C5646FF707E443EC8E /* Pods_KJNavigationViewAnimation_Example.framework */,
+				EF7A6296618F2C9714C15D5A019D139C /* Pods_KJNavigationViewAnimation_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1783DDACB2FA610C5D29AC26777A8BF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E4483F8BF3EE9D51F54B6AB804F89145 /* ReplaceMe.swift */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E637E745FDDA8BA154E901D970D125E6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA48208EAAEC2ED4E70997FB64AFB721 /* Pods-KJNavigationViewAnimation_Example */,
+				CDA402C9E95CED9420FFC39C15D0DE82 /* Pods-KJNavigationViewAnimation_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		FA48208EAAEC2ED4E70997FB64AFB721 /* Pods-KJNavigationViewAnimation_Example */ = {
+			isa = PBXGroup;
+			children = (
+				C3E0E9DD90D55F15A733E5532A59E729 /* Info.plist */,
+				C8B0D08DC1FA6F6D62BD19E723441A62 /* Pods-KJNavigationViewAnimation_Example.modulemap */,
+				FB4909A0A86680577A81F112720F0E5D /* Pods-KJNavigationViewAnimation_Example-acknowledgements.markdown */,
+				3DDF92BE627B040D46391E08BCC4CCF6 /* Pods-KJNavigationViewAnimation_Example-acknowledgements.plist */,
+				7B9E257A3B1EA56F4416C642B1FA2008 /* Pods-KJNavigationViewAnimation_Example-dummy.m */,
+				22091D6F2A8D0B12F999DA0A67B9A410 /* Pods-KJNavigationViewAnimation_Example-frameworks.sh */,
+				039CF65089D54CB5533CA7CC9B0975D5 /* Pods-KJNavigationViewAnimation_Example-resources.sh */,
+				0AF2B3AB07A94592BA126EA55E90BDE8 /* Pods-KJNavigationViewAnimation_Example-umbrella.h */,
+				D87B2B51CB6409C5583FAB4D0848003C /* Pods-KJNavigationViewAnimation_Example.debug.xcconfig */,
+				3A8CB7FB2C556DEFAFE685A34DEC94FA /* Pods-KJNavigationViewAnimation_Example.release.xcconfig */,
+			);
+			name = "Pods-KJNavigationViewAnimation_Example";
+			path = "Target Support Files/Pods-KJNavigationViewAnimation_Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8AFAC034FEC5255245B2E98531445030 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBB10288F4EAD11EB6B84415D6CC709A /* Pods-KJNavigationViewAnimation_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95E31B1A8331C456476D04D76C1EF50B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6220B05D3ACFE557B653E94CA2BE7E9 /* KJNavigationViewAnimation-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE967D1140B025132C44AA757953E364 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF5A35CBDB7887BBBBA2483534B7FD06 /* Pods-KJNavigationViewAnimation_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		05CB50B67627FDF368CB9C71FB1CC03C /* KJNavigationViewAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5159966C4547E4A1500CFF4FF4AE4D53 /* Build configuration list for PBXNativeTarget "KJNavigationViewAnimation" */;
+			buildPhases = (
+				03D8C3F48FB3D7DD63E02514B2A82C77 /* Sources */,
+				0C3636A8A1376B912D3E30CE1AAE05BD /* Frameworks */,
+				95E31B1A8331C456476D04D76C1EF50B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KJNavigationViewAnimation;
+			productName = KJNavigationViewAnimation;
+			productReference = D0D489692F797DEFD384FCB02E59D7CB /* KJNavigationViewAnimation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C7D543711CCDCC333483003F32702F2 /* Pods-KJNavigationViewAnimation_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E47C7A0D5B4B1CC376AEDE3662EC4B4E /* Build configuration list for PBXNativeTarget "Pods-KJNavigationViewAnimation_Tests" */;
+			buildPhases = (
+				2A84506855479D39FB6AD0AAD64C3AE8 /* Sources */,
+				FD01EA2807DB4918D160110C4867AC30 /* Frameworks */,
+				8AFAC034FEC5255245B2E98531445030 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-KJNavigationViewAnimation_Tests";
+			productName = "Pods-KJNavigationViewAnimation_Tests";
+			productReference = EF7A6296618F2C9714C15D5A019D139C /* Pods_KJNavigationViewAnimation_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		98E502E5E6C13F068EFB9144E5ADC7BA /* Pods-KJNavigationViewAnimation_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EC9089E26749D44D01C68C9E22269E7 /* Build configuration list for PBXNativeTarget "Pods-KJNavigationViewAnimation_Example" */;
+			buildPhases = (
+				AF2C320711705892B3363B2B426B94C6 /* Sources */,
+				EBF532CBBC8E3FAC7DDB88F6E9EC14B2 /* Frameworks */,
+				FE967D1140B025132C44AA757953E364 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				859DAAD438CE5E0F80B7B27FC909930C /* PBXTargetDependency */,
+			);
+			name = "Pods-KJNavigationViewAnimation_Example";
+			productName = "Pods-KJNavigationViewAnimation_Example";
+			productReference = 4BA0BAF60A53D7C5646FF707E443EC8E /* Pods_KJNavigationViewAnimation_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = DBC94F7262656372CBCFD6487E319D10 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05CB50B67627FDF368CB9C71FB1CC03C /* KJNavigationViewAnimation */,
+				98E502E5E6C13F068EFB9144E5ADC7BA /* Pods-KJNavigationViewAnimation_Example */,
+				6C7D543711CCDCC333483003F32702F2 /* Pods-KJNavigationViewAnimation_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03D8C3F48FB3D7DD63E02514B2A82C77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F2B2AA930864F72F1732E982CBF928 /* KJNavigationViewAnimation-dummy.m in Sources */,
+				2C67AA25DFDAA78E6B4762D7178ABEEB /* ReplaceMe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A84506855479D39FB6AD0AAD64C3AE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3391700E3CC13C50A4BA3ABAB339C0 /* Pods-KJNavigationViewAnimation_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2C320711705892B3363B2B426B94C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D9E8D249E40966E51004715F28C746B /* Pods-KJNavigationViewAnimation_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		859DAAD438CE5E0F80B7B27FC909930C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KJNavigationViewAnimation;
+			target = 05CB50B67627FDF368CB9C71FB1CC03C /* KJNavigationViewAnimation */;
+			targetProxy = EA5721A598ADFA760D5156C84B027E8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5FEF30B712ED9A1B3829BA8834CEBDB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D4F5B5B439A5CD5AA75D7ED3D814ABB /* Pods-KJNavigationViewAnimation_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KJNavigationViewAnimation_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KJNavigationViewAnimation_Tests/Pods-KJNavigationViewAnimation_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KJNavigationViewAnimation_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6BA80778083A71964F12598A06975C86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CBA2D784E51FFAD30BB89165711552F /* KJNavigationViewAnimation.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KJNavigationViewAnimation/KJNavigationViewAnimation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KJNavigationViewAnimation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KJNavigationViewAnimation/KJNavigationViewAnimation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = KJNavigationViewAnimation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		942BE6A2D5512AF0E138CD1C94A8D4FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D87B2B51CB6409C5583FAB4D0848003C /* Pods-KJNavigationViewAnimation_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KJNavigationViewAnimation_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KJNavigationViewAnimation_Example/Pods-KJNavigationViewAnimation_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KJNavigationViewAnimation_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B6E96CC6CAF81A383CF2E1582CD898D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A8CB7FB2C556DEFAFE685A34DEC94FA /* Pods-KJNavigationViewAnimation_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KJNavigationViewAnimation_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KJNavigationViewAnimation_Example/Pods-KJNavigationViewAnimation_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KJNavigationViewAnimation_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CE75F280E439153AAA3572D2E9C39297 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5239400E185205239D5D77B440AB3BF /* Pods-KJNavigationViewAnimation_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KJNavigationViewAnimation_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KJNavigationViewAnimation_Tests/Pods-KJNavigationViewAnimation_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KJNavigationViewAnimation_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E45AF639DD048A469A968D90F985931D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CBA2D784E51FFAD30BB89165711552F /* KJNavigationViewAnimation.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KJNavigationViewAnimation/KJNavigationViewAnimation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KJNavigationViewAnimation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KJNavigationViewAnimation/KJNavigationViewAnimation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = KJNavigationViewAnimation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EC9089E26749D44D01C68C9E22269E7 /* Build configuration list for PBXNativeTarget "Pods-KJNavigationViewAnimation_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				942BE6A2D5512AF0E138CD1C94A8D4FD /* Debug */,
+				B6E96CC6CAF81A383CF2E1582CD898D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5159966C4547E4A1500CFF4FF4AE4D53 /* Build configuration list for PBXNativeTarget "KJNavigationViewAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E45AF639DD048A469A968D90F985931D /* Debug */,
+				6BA80778083A71964F12598A06975C86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E47C7A0D5B4B1CC376AEDE3662EC4B4E /* Build configuration list for PBXNativeTarget "Pods-KJNavigationViewAnimation_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE75F280E439153AAA3572D2E9C39297 /* Debug */,
+				5FEF30B712ED9A1B3829BA8834CEBDB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

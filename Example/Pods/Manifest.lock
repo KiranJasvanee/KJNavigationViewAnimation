@@ -1,0 +1,16 @@
+PODS:
+  - KJNavigationViewAnimation (0.1.0)
+
+DEPENDENCIES:
+  - KJNavigationViewAnimation (from `../`)
+
+EXTERNAL SOURCES:
+  KJNavigationViewAnimation:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KJNavigationViewAnimation: da38cebf8e0b6d51bd57d0e79f668d709ff52969
+
+PODFILE CHECKSUM: 251676fa883b21e8dd88f2288be38e8b08c80b3c
+
+COCOAPODS: 1.2.0

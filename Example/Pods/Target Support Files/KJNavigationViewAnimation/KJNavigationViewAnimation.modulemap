@@ -1,0 +1,6 @@
+framework module KJNavigationViewAnimation {
+  umbrella header "KJNavigationViewAnimation-umbrella.h"
+
+  export *
+  module * { export * }
+}
