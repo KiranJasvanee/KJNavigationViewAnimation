@@ -10,16 +10,16 @@
 ## Preview
 Animate your custom navigation view using TableView, CollectionView OR ScrollView.
 
-Animation up to statusbar.
+Animation up to statusbar.  
 ![KJNavigationViewAnimation](Gifs/Animate_Upto_Statusbar.gif)  
 
-Animation up to zero.
+Animation up to zero.  
 ![KJNavigationViewAnimation](Gifs/Animate_Upto_Zero.gif)
 
-Animation up to custom value.
+Animation up to custom value.  
 ![KJNavigationViewAnimation](Gifs/Animate_Upto_Custom.gif)
 
-Animation up to zero without blurr
+Animation up to zero without blurr.  
 ![KJNavigationViewAnimation](Gifs/Animate_WithoutBlurr_Upto_Statusbar.gif)
 
 ## Example
