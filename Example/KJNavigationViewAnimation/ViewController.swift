@@ -22,7 +22,7 @@ class ViewController: UIViewController {
                                          viewController: self)
         viewKJNavigation.topbarMinimumSpace = .statusBar
         viewKJNavigation.topbarMinimumSpaceCustomValue = 40
-        viewKJNavigation.isBlurrBackground = false
+        viewKJNavigation.isBlurrBackground = true
         
         tableview.dataSource = self
         tableview.delegate = self
