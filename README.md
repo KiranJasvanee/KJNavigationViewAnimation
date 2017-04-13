@@ -7,6 +7,8 @@
 [![Stars](https://img.shields.io/github/stars/KiranJasvanee/KJNavigationViewAnimation.svg)](https://github.com/KiranJasvanee/KJNavigationViewAnimation)
 [![Language](https://img.shields.io/badge/Language-Swift-yellow.svg)](https://github.com/KiranJasvanee/KJNavigationViewAnimation)
 
+**NOTE: Pod version requires 1.2.0 & later**
+
 ## Preview
 Animate your custom navigation view using `TableView, CollectionView OR ScrollView`.   <br />   <br />
 
