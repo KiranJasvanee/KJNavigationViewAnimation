@@ -10,6 +10,8 @@
 ## Preview
 Animate your custom navigation view using `TableView, CollectionView OR ScrollView`.   <br />   <br />
 
+**NOTE: Wait till page compl**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to statusbar**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to zero**  <br />  <br />
 ![KJNavigationViewAnimation](Gifs/Animate_Upto_Statusbar.gif)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![KJNavigationViewAnimation](Gifs/Animate_Upto_Zero.gif)  <br />  <br />
 
@@ -88,20 +90,22 @@ viewKJNavigation.topbarMinimumSpaceCustomValue = 40
   <br />
   
 #### Methods
-You must have to add `UIScrollViewDelegate` to your `TableView, CollectionView OR ScrollView`. Last step to just call `KJNavigationViewAnimation scrollview methods` as below from `UIScrollViewDelegate delegate methods`
+You have to extend your `viewController` class with `UIScrollViewDelegate`, and connect `TableView, CollectionView OR ScrollView delegate to self`. Last step to call `KJNavigationViewAnimation scrollview methods` as below from `UIScrollViewDelegate delegate methods`
 
 ```Swift
-func scrollViewDidScroll(_ scrollView: UIScrollView) {
+extension ViewController: UIScrollViewDelegate {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
         viewKJNavigation.scrollviewMethod?.scrollViewDidScroll(scrollView)
-}
-func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+  }
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         viewKJNavigation.scrollviewMethod?.scrollViewWillBeginDragging(scrollView)
-}
-func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+  }
+  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         viewKJNavigation.scrollviewMethod?.scrollViewDidEndDragging(scrollView, willDecelerate: decelerate)
-}
-func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+  }
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         viewKJNavigation.scrollviewMethod?.scrollViewDidEndDecelerating(scrollView)
+  }
 }
 ```
 
