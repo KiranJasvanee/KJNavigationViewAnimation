@@ -18,10 +18,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // For Tableview
         viewKJNavigation.setupFor(Tableview: tableview,
                                          viewController: self)
-        viewKJNavigation.topbarMinimumSpace = .custom
-        viewKJNavigation.topbarMinimumSpaceCustomValue = 40
+    
+        
+        // If you want your animation up to zero
+        viewKJNavigation.topbarMinimumSpace = .statusBar
         viewKJNavigation.isBlurrBackground = true
         
         tableview.dataSource = self
