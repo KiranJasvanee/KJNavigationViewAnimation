@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D44690BF958C8AB0DDAD16F /* KJNavigationViewAnimation.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = KJNavigationViewAnimation.podspec; path = ../KJNavigationViewAnimation.podspec; sourceTree = "<group>"; };
+		2D44690BF958C8AB0DDAD16F /* KJNavigationViewAnimation.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KJNavigationViewAnimation.podspec; path = ../KJNavigationViewAnimation.podspec; sourceTree = "<group>"; };
 		5E5F834087D5279F4E965265 /* Pods-KJNavigationViewAnimation_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJNavigationViewAnimation_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KJNavigationViewAnimation_Tests/Pods-KJNavigationViewAnimation_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* KJNavigationViewAnimation_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KJNavigationViewAnimation_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,10 +42,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		739318E464BCF310599B8AB8 /* Pods-KJNavigationViewAnimation_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJNavigationViewAnimation_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KJNavigationViewAnimation_Tests/Pods-KJNavigationViewAnimation_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8467E7DC0F0ED507EC3141B3 /* Pods-KJNavigationViewAnimation_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJNavigationViewAnimation_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KJNavigationViewAnimation_Example/Pods-KJNavigationViewAnimation_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AAD704B28F661803253218E3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AAD704B28F661803253218E3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B1948FB8581667CB2C8EE3E5 /* Pods_KJNavigationViewAnimation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KJNavigationViewAnimation_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B4A93B255C85213F6CF267 /* Pods_KJNavigationViewAnimation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KJNavigationViewAnimation_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB6B9DBFCE3CEB6C30D0E483 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DB6B9DBFCE3CEB6C30D0E483 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DCC747E55DE3D60A103C2F39 /* Pods-KJNavigationViewAnimation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KJNavigationViewAnimation_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-KJNavigationViewAnimation_Example/Pods-KJNavigationViewAnimation_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -497,6 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KJNavigationViewAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -511,6 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KJNavigationViewAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

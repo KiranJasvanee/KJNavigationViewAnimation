@@ -135,13 +135,7 @@ public class KJNavigationViewAnimation: UIView {
         viewControllerInstance = viewControllerParam // assigning superview controller instance, so we can have animation using layoutIfNeeded.
         
         // blurr effect
-        var blurreffect = UIBlurEffect()
-        if #available(iOS 10.0, *) {
-            blurreffect = UIBlurEffect(style: UIBlurEffectStyle.prominent)
-        } else {
-            // Fallback on earlier versions
-            blurreffect = UIBlurEffect(style: UIBlurEffectStyle.light)
-        }
+        let blurreffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         viewBlurrOne = UIVisualEffectView(effect: blurreffect)
         viewBlurrOne.frame = self.bounds
         viewBlurrOne.autoresizingMask = [.flexibleWidth, .flexibleHeight]
