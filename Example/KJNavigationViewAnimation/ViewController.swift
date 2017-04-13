@@ -20,9 +20,9 @@ class ViewController: UIViewController {
         
         viewKJNavigation.setupFor(Tableview: tableview,
                                          viewController: self)
-        viewKJNavigation.topbarMinimumSpace = .none
+        viewKJNavigation.topbarMinimumSpace = .statusBar
         viewKJNavigation.topbarMinimumSpaceCustomValue = 40
-        viewKJNavigation.isBlurrBackground = true
+        viewKJNavigation.isBlurrBackground = false
         
         tableview.dataSource = self
         tableview.delegate = self
@@ -49,6 +49,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, UIScrollVi
             cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
         cell!.textLabel?.text = "Cell - \(indexPath.row)"
+        cell!.selectionStyle = .none
         return cell!
     }
     
