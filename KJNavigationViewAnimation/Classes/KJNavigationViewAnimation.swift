@@ -130,7 +130,6 @@ public class KJNavigationViewAnimation: UIView {
         // print("Top bar bounds area: \(self.bounds)")
         // print("Tableview bounds area: \(tableview.bounds)")
         heightOfScrollView = bounds.size.height // Height of tableview
-        print(self.constraints)
         
         viewControllerInstance = viewControllerParam // assigning superview controller instance, so we can have animation using layoutIfNeeded.
         

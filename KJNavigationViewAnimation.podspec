@@ -32,6 +32,7 @@ This library provides custom navigation bar view library, which auto animates an
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'KJNavigationViewAnimation/Classes/**/*'
+
   
   # s.resource_bundles = {
   #   'KJNavigationViewAnimation' => ['KJNavigationViewAnimation/Assets/*.png']
