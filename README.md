@@ -8,9 +8,19 @@
 [![Language](https://img.shields.io/badge/Language-Swift-yellow.svg)](https://github.com/KiranJasvanee/KJNavigationViewAnimation)
 
 ## Preview
-Slide your TableView, CollectionView OR ScrollView with animation of Navigation View!
+Animate your custom navigation view using TableView, CollectionView OR ScrollView.
 
+Animation up to statusbar.
 ![KJNavigationViewAnimation](Gifs/Animate_Upto_Statusbar.gif)  
+
+Animation up to zero.
+![KJNavigationViewAnimation](Gifs/Animate_Upto_Zero.gif)
+
+Animation up to custom value.
+![KJNavigationViewAnimation](Gifs/Animate_Upto_Custom.gif)
+
+Animation up to zero without blurr
+![KJNavigationViewAnimation](Gifs/Animate_WithoutBlurr_Upto_Statusbar.gif)
 
 ## Example
 
