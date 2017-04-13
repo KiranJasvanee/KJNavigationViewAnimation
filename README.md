@@ -1,9 +1,16 @@
 # KJNavigationViewAnimation
 
-[![CI Status](http://img.shields.io/travis/bluelabeldeveloper1/KJNavigationViewAnimation.svg?style=flat)](https://travis-ci.org/bluelabeldeveloper1/KJNavigationViewAnimation)
-[![Version](https://img.shields.io/cocoapods/v/KJNavigationViewAnimation.svg?style=flat)](http://cocoapods.org/pods/KJNavigationViewAnimation)
-[![License](https://img.shields.io/cocoapods/l/KJNavigationViewAnimation.svg?style=flat)](http://cocoapods.org/pods/KJNavigationViewAnimation)
-[![Platform](https://img.shields.io/cocoapods/p/KJNavigationViewAnimation.svg?style=flat)](http://cocoapods.org/pods/KJNavigationViewAnimation)
+[![Twitter: @KiranJasvanee](https://img.shields.io/badge/contact-@kiranjasvanee-blue.svg?style=flat)](https://twitter.com/Kiranjasvanee)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/KiranJasvanee/KJNavigationViewAnimation/blob/master/LICENSE)
+[![Issues](https://img.shields.io/github/issues/KiranJasvanee/KJNavigationViewAnimation.svg)](https://github.com/KiranJasvanee/KJNavigationViewAnimation/issues)
+[![Forks](https://img.shields.io/github/forks/KiranJasvanee/KJNavigationViewAnimation.svg)](https://github.com/KiranJasvanee/KJNavigationViewAnimation)
+[![Stars](https://img.shields.io/github/stars/KiranJasvanee/KJNavigationViewAnimation.svg)](https://github.com/KiranJasvanee/KJNavigationViewAnimation)
+[![Language](https://img.shields.io/badge/Language-Swift-yellow.svg)](https://github.com/KiranJasvanee/KJNavigationViewAnimation)
+
+## Preview
+Slide your TableView, CollectionView OR ScrollView with animation of Navigation View!
+
+![KJNavigationViewAnimation](Gifs/Animate_Upto_Statusbar.gif)  
 
 ## Example
 
