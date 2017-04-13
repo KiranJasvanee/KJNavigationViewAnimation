@@ -64,6 +64,9 @@ override func viewDidLoad() {
         
         // If you want blurr background of navigation view.
         viewKJNavigation.isBlurrBackground = true
+        
+        // assign delegate of TableView, CollectionView OR ScrollView with self.
+        tableview.delegate = self
 }
 ```
 ```swift
@@ -95,6 +98,7 @@ You have to extend your `viewController` class with `UIScrollViewDelegate`, and 
 ```Swift
 extension ViewController: UIScrollViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // viewKJNavigation is my declared KJNavigationViewAnimation property in ViewController class
         viewKJNavigation.scrollviewMethod?.scrollViewDidScroll(scrollView)
   }
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
