@@ -137,10 +137,10 @@ public class KJNavigationViewAnimation: UIView {
         // blurr effect
         var blurreffect = UIBlurEffect()
         if #available(iOS 10.0, *) {
-            let blurreffect = UIBlurEffect(style: UIBlurEffectStyle.prominent)
+            blurreffect = UIBlurEffect(style: UIBlurEffectStyle.prominent)
         } else {
             // Fallback on earlier versions
-            let blurreffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+            blurreffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         }
         viewBlurrOne = UIVisualEffectView(effect: blurreffect)
         viewBlurrOne.frame = self.bounds
