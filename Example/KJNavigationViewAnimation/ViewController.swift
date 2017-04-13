@@ -20,9 +20,9 @@ class ViewController: UIViewController {
         
         viewKJNavigation.setupFor(Tableview: tableview,
                                          viewController: self)
-        viewKJNavigation.topbarMinimumSpace = .none
+        viewKJNavigation.topbarMinimumSpace = .custom
         viewKJNavigation.topbarMinimumSpaceCustomValue = 40
-        viewKJNavigation.isBlurrBackground = false
+        viewKJNavigation.isBlurrBackground = true
         
         tableview.dataSource = self
         tableview.delegate = self
