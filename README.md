@@ -10,7 +10,7 @@
 ## Preview
 Animate your custom navigation view using TableView, CollectionView OR ScrollView.   <br />   <br />
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to statusbar**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to zero**  <br />  <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to statusbar**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to zero**  <br />  <br />
 ![KJNavigationViewAnimation](Gifs/Animate_Upto_Statusbar.gif)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![KJNavigationViewAnimation](Gifs/Animate_Upto_Zero.gif)  <br />  <br />
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to custom value**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to zero without blurr**  <br />  <br />
@@ -22,18 +22,92 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+- Swift 3.0.1 or later
+- iOS 9.0 or later
+
 ## Installation
 
 KJNavigationViewAnimation is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "KJNavigationViewAnimation"
+pod 'KJNavigationViewAnimation', '~> 0.1.0'
+```
+
+## Usage
+
+KJNavigationViewAnimation will be used via interface builder.
+
+* Add custom navigation view `(UIView)` at the top in your interface builder. Add `KJNavigationViewAnimation` in `Class` property at Identity Inspector of added view.
+
+* You've to add `Height` constraint to your added custom navigation view, you don't have to add any Identifier to it.
+
+  <br />
+#### Properties
+Use following properties to edit it's default functionality. Add your settings in `viewDidLoad`.
+
+```swift 
+// declare instance of KJNavigationViewAnimation by connecting to UIView outlet in interface builder
+@IBOutlet weak var viewKJNavigation: KJNavigationViewAnimation!
+```
+```swift 
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // For TableView
+        viewKJNavigation.setupFor(Tableview: yourTableView,
+                                  viewController: self)
+        // If you want your animation up to statusbar.
+        viewKJNavigation.topbarMinimumSpace = .statusBar
+        
+        // If you want blurr background of navigation view.
+        viewKJNavigation.isBlurrBackground = true
+}
+```
+```swift
+// For CollectionView
+viewKJNavigation.setupFor(CollectionView: yourCollectionView,
+                          viewController: self)
+```
+
+```swift
+// For ScrollView
+viewKJNavigation.setupFor(Scrollview: yourScrollView,
+                          viewController: self)
+```
+
+```swift
+// If you want your animation up to zero.
+viewKJNavigation.topbarMinimumSpace = .none
+```
+```swift
+// If you want your animation up to custom value assigned to topbarMinimumSpaceCustomValue property.
+viewKJNavigation.topbarMinimumSpace = .custom
+viewKJNavigation.topbarMinimumSpaceCustomValue = 40
+```
+  <br />
+  
+#### Methods
+You must have to add `UIScrollViewDelegate` to your `TableView, CollectionView OR ScrollView`. Last step to just call `KJNavigationViewAnimation scrollview methods` as below from `UIScrollViewDelegate delegate methods`
+
+```Swift
+func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        viewKJNavigation.scrollviewMethod?.scrollViewDidScroll(scrollView)
+}
+func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        viewKJNavigation.scrollviewMethod?.scrollViewWillBeginDragging(scrollView)
+}
+func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        viewKJNavigation.scrollviewMethod?.scrollViewDidEndDragging(scrollView, willDecelerate: decelerate)
+}
+func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        viewKJNavigation.scrollviewMethod?.scrollViewDidEndDecelerating(scrollView)
+}
 ```
 
 ## Author
 
-bluelabeldeveloper1, kiran.jasvanee@yahoo.com
+Kiran Jasvanee, kiran.jasvanee@yahoo.com
 
 ## License
 
