@@ -13,19 +13,19 @@ enum ScrollPosition {
 }
 
 // enum of minimumSpace
-enum minimumSpace{
+public enum minimumSpace{
     case none, statusBar, custom
 }
 
 
-protocol KJNavigaitonViewScrollviewDelegate {
+public protocol KJNavigaitonViewScrollviewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
 }
 
-class KJNavigationViewAnimation: UIView {
+public class KJNavigationViewAnimation: UIView {
 
     public var scrollviewMethod: KJNavigaitonViewScrollviewDelegate?
     
@@ -59,7 +59,7 @@ class KJNavigationViewAnimation: UIView {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         // Implement KJTopBarScrollviewDelegate to self.
@@ -93,7 +93,11 @@ class KJNavigationViewAnimation: UIView {
             if topbarMinimumSpace == .custom {
                 minimumHeightOfNavigationView = newValue
             }else{
-                minimumHeightOfNavigationView = 0
+                if topbarMinimumSpacePrivate == .statusBar {
+                    minimumHeightOfNavigationView = 20
+                }else{
+                    minimumHeightOfNavigationView = 0
+                }
             }
         }
     }
@@ -111,13 +115,13 @@ class KJNavigationViewAnimation: UIView {
         }
     }
     
-    func setupFor(Tableview tableview: UITableView, viewController: UIViewController) {
+    public func setupFor(Tableview tableview: UITableView, viewController: UIViewController) {
         self.initSetupMethod(bounds: tableview.bounds, viewController: viewController)
     }
-    func setupFor(CollectionView collectionview: UITableView, viewController: UIViewController) {
+    public func setupFor(CollectionView collectionview: UITableView, viewController: UIViewController) {
         self.initSetupMethod(bounds: collectionview.bounds, viewController: viewController)
     }
-    func setupFor(Scrollview scrollview: UIScrollView, viewController: UIViewController) {
+    public func setupFor(Scrollview scrollview: UIScrollView, viewController: UIViewController) {
         self.initSetupMethod(bounds: scrollview.bounds, viewController: viewController)
     }
     
@@ -149,7 +153,7 @@ class KJNavigationViewAnimation: UIView {
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         // Drawing code
         for constraint in self.constraints{
             
@@ -162,8 +166,10 @@ class KJNavigationViewAnimation: UIView {
                 
                 
                 // if height of topbar less than minimum bar, keep minimum value to 0
-                if heightOfNavigationView <= minimumHeightOfNavigationView{
-                    minimumHeightOfNavigationView = 0
+                if topbarMinimumSpacePrivate == .custom {
+                    if heightOfNavigationView <= minimumHeightOfNavigationView{
+                        minimumHeightOfNavigationView = 0
+                    }
                 }
             }
         }
@@ -178,7 +184,7 @@ class KJNavigationViewAnimation: UIView {
 
 extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
     
-    internal func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // print("scrollview did scroll to \(scrollView.contentOffset.y)")
         
         // if scrollview content offset Yth position movin to minus indicates end of tableview at top-wise scrolling, will cancel any update on animation.
@@ -273,7 +279,7 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
         }
     }
     
-    internal func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         // print("scrollview begin dragging")
         // print("content size height: \(scrollView.contentSize.height)")
         
@@ -289,7 +295,7 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
         }
     }
     
-    internal func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         // print("scrollview did end dragging")
         
         // top bar shouldn't be allowed to scroll in certain circumstances. please check this instance declaration for more information.
@@ -313,7 +319,7 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
         }
     }
     
-    internal func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         // print("scrollview end decelerating")
         
         // top bar shouldn't be allowed to scroll in certain circumstances. please check this instance declaration for more information.
