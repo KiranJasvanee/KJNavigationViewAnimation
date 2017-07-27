@@ -118,7 +118,7 @@ public class KJNavigationViewAnimation: UIView {
     public func setupFor(Tableview tableview: UITableView, viewController: UIViewController) {
         self.initSetupMethod(bounds: tableview.bounds, viewController: viewController)
     }
-    public func setupFor(CollectionView collectionview: UITableView, viewController: UIViewController) {
+    public func setupFor(CollectionView collectionview: UICollectionView, viewController: UIViewController) {
         self.initSetupMethod(bounds: collectionview.bounds, viewController: viewController)
     }
     public func setupFor(Scrollview scrollview: UIScrollView, viewController: UIViewController) {
