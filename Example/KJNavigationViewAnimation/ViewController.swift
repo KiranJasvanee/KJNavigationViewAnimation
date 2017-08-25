@@ -24,8 +24,9 @@ class ViewController: UIViewController {
     
         
         // If you want your animation up to zero
-        viewKJNavigation.topbarMinimumSpace = .statusBar
-        viewKJNavigation.isBlurrBackground = true
+        viewKJNavigation.topbarMinimumSpace = .custom(height: 80)
+        viewKJNavigation.isBlurrBackground = false
+        
         
         tableview.dataSource = self
         tableview.delegate = self

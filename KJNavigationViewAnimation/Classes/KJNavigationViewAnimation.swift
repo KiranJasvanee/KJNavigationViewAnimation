@@ -13,8 +13,9 @@ enum ScrollPosition {
 }
 
 // enum of minimumSpace
-public enum minimumSpace{
-    case none, statusBar, custom
+public enum MinimumSpace{
+    case none, statusBar
+    case custom(height: Float)
 }
 
 
@@ -29,31 +30,27 @@ public class KJNavigationViewAnimation: UIView {
 
     public var scrollviewMethod: KJNavigaitonViewScrollviewDelegate?
     
-    // global variants
-    fileprivate var heightOfNavigationView: Float = 64
-    fileprivate var minimumHeightOfNavigationView: Float = 0
     
     
-    // height constraint of topbar
-    fileprivate var constraintHeightOfNavigationView: NSLayoutConstraint = NSLayoutConstraint()
+    fileprivate var HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION: Float = 64
+    fileprivate var HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION: Float = 0
+
+    fileprivate var constraintHeightOfNavigationView: NSLayoutConstraint = NSLayoutConstraint()     // Height constraint of custom view.
+    fileprivate var viewController: UIViewController = UIViewController()                           // view controller instance for animation effects requred with layoutIfNeeded.
+    
+    
     
     // holding count of down and up scrolling values
     fileprivate var countOfDidScrollUp: Int = 0
     fileprivate var countOfDidScrollDown: Float = 0.0
     
-    // view controller instance for animation effects requred with layoutIfNeeded.
-    fileprivate var viewControllerInstance: UIViewController = UIViewController()
     
     /*
      When there is really low content size to scroll down, then it won't be possible to reduce topbar and show again. So unfortunately for lower cotentsize we have only one option to don't scroll till we have enough space to scroll down with topbar animation.
      */
     // allow animation.
-    fileprivate var heightOfScrollView: CGFloat = 0
+    fileprivate var HEIGHT_OF_SCROLLVIEW: CGFloat = 0
     fileprivate var isAllowTopbarAnimation: Bool = true
-    
-    // blurr
-    fileprivate var isBlurRequired: Bool = false
-    fileprivate var viewBlurrOne: UIVisualEffectView = UIVisualEffectView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,55 +63,12 @@ public class KJNavigationViewAnimation: UIView {
         self.scrollviewMethod = self
     }
     
-    private var topbarMinimumSpacePrivate: minimumSpace = .none
-    public var topbarMinimumSpace: minimumSpace {
-        get{
-            return self.topbarMinimumSpacePrivate
-        }
-        set{
-            if newValue == .none {
-                minimumHeightOfNavigationView = 0
-                topbarMinimumSpacePrivate = .none
-            }else if newValue == .statusBar {
-                minimumHeightOfNavigationView = 20
-                topbarMinimumSpacePrivate = .statusBar
-            }else{
-                minimumHeightOfNavigationView = 0
-                topbarMinimumSpacePrivate = .custom
-            }
-        }
-    }
     
-    public var topbarMinimumSpaceCustomValue: Float {
-        get{
-            return self.topbarMinimumSpaceCustomValue
-        }
-        set{
-            if topbarMinimumSpace == .custom {
-                minimumHeightOfNavigationView = newValue
-            }else{
-                if topbarMinimumSpacePrivate == .statusBar {
-                    minimumHeightOfNavigationView = 20
-                }else{
-                    minimumHeightOfNavigationView = 0
-                }
-            }
-        }
-    }
     
-    public var isBlurrBackground: Bool {
-        get{
-            return self.isBlurrBackground
-        }
-        set{
-            if newValue {
-                isBlurRequired = true
-            }else{
-                isBlurRequired = false
-            }
-        }
-    }
     
+    // MARK: Public properties --------------------------------
+    
+    // Setup functions.
     public func setupFor(Tableview tableview: UITableView, viewController: UIViewController) {
         self.initSetupMethod(bounds: tableview.bounds, viewController: viewController)
     }
@@ -125,15 +79,53 @@ public class KJNavigationViewAnimation: UIView {
         self.initSetupMethod(bounds: scrollview.bounds, viewController: viewController)
     }
     
-    func initSetupMethod(bounds: CGRect,viewController viewControllerParam: UIViewController){
+    // Minimum topbar space
+    public var topbarMinimumSpace: MinimumSpace = .none {
+        didSet{
+            switch self.topbarMinimumSpace {
+            case .none:
+                HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION = 0
+                break
+            case .statusBar:
+                HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION = 20
+                break
+            case .custom(let height):
+                HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION = height
+                break
+            }
+        }
+    }
+    
+    // blurr
+    fileprivate var isBlurRequired: Bool = false
+    fileprivate var viewBlurrOne: UIVisualEffectView = UIVisualEffectView()
+    public var isBlurrBackground: Bool = false{
+        didSet{
+            if self.isBlurrBackground {
+                isBlurRequired = true
+            }else{
+                isBlurRequired = false
+            }
+        }
+    }
+    //----------------------------------------------------------
+    
+    
+    
+    
+    func initSetupMethod(bounds: CGRect,viewController: UIViewController){
         
         // print("Top bar bounds area: \(self.bounds)")
         // print("Tableview bounds area: \(tableview.bounds)")
-        heightOfScrollView = bounds.size.height // Height of tableview
+        HEIGHT_OF_SCROLLVIEW = bounds.size.height // Height of tableview
         // print(self.constraints)
         
-        viewControllerInstance = viewControllerParam // assigning superview controller instance, so we can have animation using layoutIfNeeded.
+        self.viewController = viewController // assigning superview controller instance, so we can have animation using layoutIfNeeded.
         
+        self.addBlurr()
+    }
+    
+    func addBlurr() {
         // blurr effect
         let blurreffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         viewBlurrOne = UIVisualEffectView(effect: blurreffect)
@@ -151,18 +143,18 @@ public class KJNavigationViewAnimation: UIView {
         // Drawing code
         for constraint in self.constraints{
             
-            // print("yes it does have height")
             if constraint.firstAttribute == .height {
+                
                 constraintHeightOfNavigationView = constraint               // assign height constraint to constraintHeightOfTopbar, If there is no height constraint we have to add it manually from here.
                 
-                heightOfNavigationView = Float(constraint.constant) // assign height constraint constant value to countOfDidScrollDown, so we can operate with it.
-                countOfDidScrollDown = heightOfNavigationView
+                HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION = Float(constraint.constant) // assign height constraint constant value to countOfDidScrollDown, so we can operate with it.
+                countOfDidScrollDown = HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION
                 
                 
                 // if height of topbar less than minimum bar, keep minimum value to 0
-                if topbarMinimumSpacePrivate == .custom {
-                    if heightOfNavigationView <= minimumHeightOfNavigationView{
-                        minimumHeightOfNavigationView = 0
+                if case let MinimumSpace.custom(height) = self.topbarMinimumSpace{
+                    if HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION <= height{
+                        HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION = 0
                     }
                 }
             }
@@ -179,110 +171,91 @@ public class KJNavigationViewAnimation: UIView {
 extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // print("scrollview did scroll to \(scrollView.contentOffset.y)")
         
-        // if scrollview content offset Yth position movin to minus indicates end of tableview at top-wise scrolling, will cancel any update on animation.
+        let scrollViewContentOffset =  scrollView.contentOffset.y
         
-        // Scroll view reached to top
-        if scrollView.contentOffset.y <= 0.0 {
-            self.scrollToUp(scrollView)
-            return
-        }
-        
-        // Scroll view reached to bottom
-        let scrollOffset = scrollView.contentOffset.y
-        let scrollViewHeight = scrollView.frame.size.height
-        if (scrollOffset + scrollViewHeight) >= scrollView.contentSize.height{
-            return
-        }
-        
-        
-        // print("calculate end of scrollview: \(scrollOffset + scrollViewHeight)")
         
         /*
-         Checked based on last holded value in - lastScrolledContentOffsetY
-         */
-        // print("\(self.lastScrolledContentOffsetY) - \(scrollView.contentOffset.y)")
-        if lastScrolledContentOffsetY <= Float(scrollView.contentOffset.y){
-            self.scrollToDown(scrollView)
-        }else{
-            self.scrollToUp(scrollView)
+            Return -> When scrollview goes beyong top
+            While scrolling, If scrollview content offset Yth position movin to minus indicates end of scrollview contentSize. Developer can stop or continue animation based on their requirement.
+        */
+        if scrollViewContentOffset <= 0.0 {
+            self.scrollUpWayToBeforeAnimationLayout(scrollView)
+            return
         }
-        lastScrolledContentOffsetY = Float(scrollView.contentOffset.y)
+        
+        // Return -> When scrollview goes beyong bottom
+        /*
+                           ~~~   *---------------------------    ~~~
+                            |    |                          |     |
+                            |    |                          |     |
+                            |    |                          |     |  Above ScrollView's ContentOffset
+                            |    |                          |     |
+                            |    |                          |     |
+                            |    @--------------------------|    ~~~
+                            |    |##########################|
+                            |    |##########################|
+            ScrollView's -->|    |### ScrollView's Frame ###|
+            ContentSize     |    |##########################|
+                            |    |##########################|
+                            |    |--------------------------|    ~~~
+                            |    |                          |     |
+                            |    |                          |     |  Below ScrollView's ContentOffset
+                            |    |                          |     |
+                           ~~~   ----------------------------    ~~~
+         
+            @ - Origin of ScrollView.
+            * - ContentOffset origin value, starting from 0.0
+        */
+        if (scrollViewContentOffset + scrollView.frame.size.height) >= scrollView.contentSize.height{
+            return
+        }
+        
+    
+        
+        /*
+            Scrollview animation tie up calls.
+        */
+        
+        if self.lastScrolledContentOffsetY <= Float(scrollViewContentOffset){
+            // When scroll goes upwards, Above contentOffset value will be in incremented state, because we are moving towards lower part of contentSize scrollView
+            self.scrollUpWayToAfterAnimationLayout(scrollView)
+        }else{
+            // When scroll goes downwards, Above contentOffset value will be in decremented state, because we are moving towards above part of contentSize scrollView
+            self.scrollUpWayToBeforeAnimationLayout(scrollView)
+        }
+        
+        lastScrolledContentOffsetY = Float(scrollView.contentOffset.y)      // Store last ContentOffset value. We are comparing this with latest one to check that scroll movin upwards or downwards.
     }
     
-    func scrollToDown(_ scrollView: UIScrollView) {
-        // print("scroll down")
-        // first check do we have enough scroll contentsize to scroll up.
-        
-        // top bar shouldn't be allowed to scroll in certain circumstances. please check this instance declaration for more information.
-        guard isAllowTopbarAnimation else{
-            return
-        }
-        
-        // For down scrolling.
-        countOfDidScrollDown -= 4.0
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            if self.countOfDidScrollDown >= self.minimumHeightOfNavigationView {
-                self.constraintHeightOfNavigationView.constant = CGFloat(self.countOfDidScrollDown)
-            }
-            
-            // if blurr is ON.
-            if self.isBlurRequired {
-                // print("blue effect in percentage: \((heightOfTopbar-countOfDidScrollDown)/100)")
-                self.viewBlurrOne.alpha = CGFloat((self.heightOfNavigationView-self.countOfDidScrollDown)/100.0)
-            }
-            
-            self.viewControllerInstance.view.layoutIfNeeded()
-        })
-        
-        enumScrollPosition = .down // set scroll position direction
-        countOfDidScrollUp = 0
-    }
-    func scrollToUp(_ scrollView: UIScrollView) {
-        // print("scroll up")
-        
-        // top bar shouldn't be allowed to scroll in certain circumstances. please check this instance declaration for more information.
-        guard isAllowTopbarAnimation else{
-            return
-        }
-        
-        countOfDidScrollUp += 1
-        // Reason of keeping this above 2, it's when scroll up called up at least two times and more then and then only bring topbar down. Because sometimes when there are small content size to scroll down, it will produce a error of not allowing to watch few last content of scrollview.
-        if countOfDidScrollUp > 1 {
-            /*
-             Checked based on last holded value in - lastScrolledContentOffsetY
-             */
-            if constraintHeightOfNavigationView.constant != CGFloat(heightOfNavigationView) {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.constraintHeightOfNavigationView.constant = CGFloat(self.heightOfNavigationView)
-                    self.viewControllerInstance.view.layoutIfNeeded()
-                    
-                    // if blurr is ON.
-                    if self.isBlurRequired {
-                        self.viewBlurrOne.alpha = 0.0
-                    }
-                    
-                }, completion: { (isAnimated) in
-                    self.countOfDidScrollDown = self.heightOfNavigationView
-                })
-            }
-            
-            enumScrollPosition = .up // set scroll position direction
-        }
-    }
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        // print("scrollview begin dragging")
-        // print("content size height: \(scrollView.contentSize.height)")
         
         /*
-         This will check is that we should allow topbar animation?, Do we have enough contentSize in scrollview below it's bounds to settle it with topbar.
-         Ofcourse we need doble of topbar height after bounds of scrollview to go down so topbar can be animated perfectly.
+         This will check is that we should allow topbar animation?, Do we have enough below contentSize of scrollview to settle in replaced of customview.
+         
+         So will check scrollView's ContentSize >= (Height of custom view before animation - Height of custom view after animation) + height of scrollview, that's the exact contentSize we requires to scrollUp.
+        
+                         ----------------------------
+                         |                          |
+                         |                          |
+                   ~~~   |--------------------------| <----- Custom view after animation
+                    |    |                          |
+                    |    |                          |
+                    |    |            +             |
+                    |    |                          |
+        ContentSize |    |                          |
+        Needed to   |    |--------------------------| <----- Custom view before animation
+        Scroll      |    |                          |    ~~~
+                    |    |                          |     |
+                    |    |                          |     |
+                    |    |            +             |     | TableView (ScrollView)
+                    |    |                          |     |
+                    |    |                          |     |
+                   ~~~   ----------------------------    ~~~
          */
-        let differenceBetweenContentSizeAndBounds = scrollView.contentSize.height - heightOfScrollView
-        if (Float(differenceBetweenContentSizeAndBounds)) > (heightOfNavigationView + heightOfNavigationView) {
+        
+        if (Float(scrollView.contentSize.height)) >= ((HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION - HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION) + Float(scrollView.frame.size.height)) {
             isAllowTopbarAnimation = true
         }else{
             isAllowTopbarAnimation = false
@@ -304,9 +277,9 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             // if scrolling not contenious.
             if !scrollView.isDecelerating{
-                if self.enumScrollPosition == .down {
+                if self.enumScrollPosition == .up {
                     UIView.animate(withDuration: 0.1, animations: {
-                        self.endYourDownScrollMethod()
+                        self.downCustomView()
                     })
                 }
             }
@@ -321,9 +294,9 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
             return
         }
         
-        if self.enumScrollPosition == .down {
+        if self.enumScrollPosition == .up {
             UIView.animate(withDuration: 0.1, animations: {
-                self.endYourDownScrollMethod()
+                self.downCustomView()
             })
         }
     }
@@ -331,16 +304,81 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
     /*
      If your scroll didn't end properly, scrollViewDidEndDragging and scrollViewDidEndDecelerating delegates will handle it to scroll down perfectly.
      */
-    func endYourDownScrollMethod() {
-        constraintHeightOfNavigationView.constant = CGFloat(minimumHeightOfNavigationView)
-        countOfDidScrollDown = minimumHeightOfNavigationView
+    func downCustomView() {
+        constraintHeightOfNavigationView.constant = CGFloat(HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION)
+        countOfDidScrollDown = HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION
         
         // if blurr is ON.
         if isBlurRequired {
             viewBlurrOne.alpha = 1.0
         }
         
-        viewControllerInstance.view.layoutIfNeeded()
+        self.viewController.view.layoutIfNeeded()
+    }
+}
+
+
+
+
+extension KJNavigationViewAnimation {
+    
+    func scrollUpWayToAfterAnimationLayout(_ scrollView: UIScrollView) {
+        
+        guard isAllowTopbarAnimation else{
+            return
+        }
+        
+        // Scrolling to upwards.
+        countOfDidScrollDown -= 4.0
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            
+            if self.countOfDidScrollDown >= self.HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION {
+                self.constraintHeightOfNavigationView.constant = CGFloat(self.countOfDidScrollDown)
+            }
+            
+            // if blurr is ON.
+            if self.isBlurRequired {
+                // print("blue effect in percentage: \((heightOfTopbar-countOfDidScrollDown)/100)")
+                self.viewBlurrOne.alpha = CGFloat((self.HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION-self.countOfDidScrollDown)/100.0)
+            }
+            
+            self.viewController.view.layoutIfNeeded()
+        })
+        
+        enumScrollPosition = .up // set scroll position direction
+        countOfDidScrollUp = 0
+    }
+    func scrollUpWayToBeforeAnimationLayout(_ scrollView: UIScrollView) {
+        
+        guard isAllowTopbarAnimation else{
+            return
+        }
+        
+        countOfDidScrollUp += 1
+        // Reason of keeping this above 2, it's when scroll up called up at least two times and more then and then only bring topbar down. Because sometimes when there are small content size to scroll down, it will produce a error of not allowing to watch few last content of scrollview.
+        if countOfDidScrollUp > 1 {
+            /*
+             Checked based on last holded value in - lastScrolledContentOffsetY
+             */
+            if constraintHeightOfNavigationView.constant != CGFloat(HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION) {
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.constraintHeightOfNavigationView.constant = CGFloat(self.HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION)
+                    self.viewController.view.layoutIfNeeded()
+                    
+                    // if blurr is ON.
+                    if self.isBlurRequired {
+                        self.viewBlurrOne.alpha = 0.0
+                    }
+                    
+                }, completion: { (isAnimated) in
+                    self.countOfDidScrollDown = self.HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION
+                })
+            }
+            
+            enumScrollPosition = .down // set scroll position direction
+        }
     }
 }
 
