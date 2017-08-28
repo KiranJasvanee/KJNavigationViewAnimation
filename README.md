@@ -7,27 +7,35 @@
 [![Stars](https://img.shields.io/github/stars/KiranJasvanee/KJNavigationViewAnimation.svg)](https://github.com/KiranJasvanee/KJNavigationViewAnimation)
 [![Language](https://img.shields.io/badge/Language-Swift-yellow.svg)](https://github.com/KiranJasvanee/KJNavigationViewAnimation)
 
-**NOTE: Pod version requires 1.2.0 & later**
+**NOTE:** Pod version requires 1.2.0 & later
 
 ## Preview
-Animate your custom navigation view using `TableView, CollectionView OR ScrollView`.   <br />   <br />
+Animate your Custom View using `TableView, CollectionView OR ScrollView`.   <br />   <br />
 
-**NOTE: In below presentation, if animation looks laggy, wait till page completes it loading. It's smooth as you scrolls**
+**NOTE:** In below presentation, if animation looks laggy, wait till page completes it loading. It's smooth as you scrolls
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to statusbar**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to zero**  <br />  <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Animation up to statusbar*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Animation up to zero*  <br />  <br />
 ![KJNavigationViewAnimation](Gifs/Animate_Upto_Statusbar.gif)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![KJNavigationViewAnimation](Gifs/Animate_Upto_Zero.gif)  <br />  <br />
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to custom value**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Animation up to zero without blurr**  <br />  <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Animation up to custom value*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Animation up to zero without blurr*  <br />  <br />
 ![KJNavigationViewAnimation](Gifs/Animate_Upto_Custom.gif)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![KJNavigationViewAnimation](Gifs/Animate_WithoutBlurr_Upto_Statusbar.gif)
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Things you can do, Please checkout example project to build similar.<br />  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Animation up to custom value* <br />  <br />
+![KJNavigationViewAnimation](Gifs/AppearanceOrDisappearanceUsingKJNavigation.gif) <br />  <br />
+
+```swift 
+// Pass objects for appearance and disappearance of those according to scrolling.
+viewKJNavigation.disappearanceObjects(instances: [labelCustomViewTitle, labelCustomViewSubtitle])    
+viewKJNavigation.appearanceObjects(instances: [viewNavigation])
+```
 
 ## Requirements
 
-- Swift 3.0.1 or later
-- iOS 9.0 or later
+- Swift 3.0.1+
+- iOS 9.0+
 
 ## Installation
 
@@ -42,16 +50,16 @@ pod 'KJNavigationViewAnimation', '~> 0.1.0'
 
 KJNavigationViewAnimation will be used via interface builder.
 
-* Add custom navigation view `(UIView)` at the top in your interface builder. Add `KJNavigationViewAnimation` in `Class` property at Identity Inspector of added view.
+* Add Custom View `(UIView)` at the top in your interface builder. Add `KJNavigationViewAnimation` in `Class` property at Identity Inspector of added view.
 
-* You've to add `Height` constraint to your added custom navigation view, you don't have to add any Identifier to it.
+* You've to add `Height` constraint to your Custom View, don't add identifier to it, library will detect height automatically.
 
   <br />
 #### Properties
 Use following properties to edit it's default functionality. Add your settings in `viewDidLoad`.
 
 ```swift 
-// declare instance of KJNavigationViewAnimation by connecting to UIView outlet in interface builder
+// declare instance of KJNavigationViewAnimation by connecting it to UIView outlet in interface builder
 @IBOutlet weak var viewKJNavigation: KJNavigationViewAnimation!
 ```
 ```swift 
@@ -61,7 +69,7 @@ override func viewDidLoad() {
         // For TableView
         viewKJNavigation.setupFor(Tableview: yourTableView,
                                   viewController: self)
-        // If you want your animation up to statusbar.
+        // Animate up to statusbar.
         viewKJNavigation.topbarMinimumSpace = .statusBar
         
         // If you want blurr background of navigation view.
@@ -84,13 +92,12 @@ viewKJNavigation.setupFor(Scrollview: yourScrollView,
 ```
 
 ```swift
-// If you want your animation up to zero.
+// Animate up to zero.
 viewKJNavigation.topbarMinimumSpace = .none
 ```
 ```swift
-// If you want your animation up to custom value assigned to topbarMinimumSpaceCustomValue property.
-viewKJNavigation.topbarMinimumSpace = .custom
-viewKJNavigation.topbarMinimumSpaceCustomValue = 40
+// Animate up to custom property.
+viewKJNavigation.topbarMinimumSpace = .custom(height: 64)
 ```
   <br />
   
@@ -117,6 +124,7 @@ extension ViewController: UIScrollViewDelegate {
 
 ## Author
 
+**Skype:** kiranjasvanee
 Kiran Jasvanee, kiran.jasvanee@yahoo.com
 
 ## License
