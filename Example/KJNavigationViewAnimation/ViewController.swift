@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewKJNavigation: KJNavigationViewAnimation!
     @IBOutlet weak var tableview: UITableView!
     
+    // Instances to visible and invisible according to scroll.
+    @IBOutlet weak var labelCustomViewTitle: UILabel!
+    @IBOutlet weak var labelCustomViewSubtitle: UILabel!
+    @IBOutlet weak var viewNavigation: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,8 +29,10 @@ class ViewController: UIViewController {
     
         
         // If you want your animation up to zero
-        viewKJNavigation.topbarMinimumSpace = .custom(height: 80)
+        viewKJNavigation.topbarMinimumSpace = .custom(height: 64)
         viewKJNavigation.isBlurrBackground = false
+        viewKJNavigation.disappearanceObjects(instances: [labelCustomViewTitle, labelCustomViewSubtitle])
+        viewKJNavigation.appearanceObjects(instances: [viewNavigation])
         
         
         tableview.dataSource = self

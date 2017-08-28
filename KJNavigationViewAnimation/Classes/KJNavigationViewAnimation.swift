@@ -110,6 +110,16 @@ public class KJNavigationViewAnimation: UIView {
             }
         }
     }
+    
+    // Appearance/Disappearance objects
+    fileprivate var instancesAffectsForDisappearance: [UIView] = [UIView]()
+    public func disappearanceObjects(instances: [UIView]) {
+        self.instancesAffectsForDisappearance = instances
+    }
+    fileprivate var instancesAffectsForAppearance: [UIView] = [UIView]()
+    public func appearanceObjects(instances: [UIView]) {
+        self.instancesAffectsForAppearance = instances
+    }
     //----------------------------------------------------------
     
 
@@ -319,6 +329,9 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
             viewBlurrOne.alpha = 1.0
         }
         
+        self.setDisappearanceVisibilityOfAffectedByInstances()
+        self.setAppearanceVisibilityOfAffectedByInstances()
+        
         self.viewController.view.layoutIfNeeded()
     }
 }
@@ -349,6 +362,9 @@ extension KJNavigationViewAnimation {
                 self.viewBlurrOne.alpha = CGFloat((self.HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION-self.countOfDidScrollDown)/100.0)
             }
             
+            self.setDisappearanceVisibilityOfAffectedByInstances()
+            self.setAppearanceVisibilityOfAffectedByInstances()
+            
             self.viewController.view.layoutIfNeeded()
         })
         
@@ -378,12 +394,36 @@ extension KJNavigationViewAnimation {
                         self.viewBlurrOne.alpha = 0.0
                     }
                     
+                    self.setDisappearanceVisibilityOfAffectedByInstances()
+                    self.setAppearanceVisibilityOfAffectedByInstances()
+                    
                 }, completion: { (isAnimated) in
                     self.countOfDidScrollDown = self.HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION
                 })
             }
             
             enumScrollPosition = .down // set scroll position direction
+        }
+    }
+    
+    func setDisappearanceVisibilityOfAffectedByInstances() {
+        
+        let progressUpTo = self.HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION-self.HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION
+        let progressReached = Float(self.constraintHeightOfNavigationView.constant)-self.HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION
+        let alphaForDisappearance = progressReached/progressUpTo
+        for view in self.instancesAffectsForDisappearance {
+            view.alpha = CGFloat(alphaForDisappearance)
+        }
+    }
+    
+    func setAppearanceVisibilityOfAffectedByInstances() {
+        
+        let progressUpTo = self.HEIGHT_OF_CUSTOMVIEW_BEFORE_ANIMATION-self.HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION
+        let progressReached = Float(self.constraintHeightOfNavigationView.constant)-self.HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION
+        let alphaForAppearance = 1.0-(progressReached/progressUpTo)
+        print(alphaForAppearance)
+        for view in self.instancesAffectsForAppearance {
+            view.alpha = CGFloat(alphaForAppearance)
         }
     }
 }
