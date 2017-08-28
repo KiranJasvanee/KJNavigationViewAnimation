@@ -263,6 +263,7 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
         // print("scrollview did end dragging")
         
         // top bar shouldn't be allowed to scroll in certain circumstances. please check this instance declaration for more information.
@@ -279,7 +280,7 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
             if !scrollView.isDecelerating{
                 if self.enumScrollPosition == .up {
                     UIView.animate(withDuration: 0.1, animations: {
-                        self.downCustomView()
+                        self.upCustomView()
                     })
                 }
             }
@@ -287,7 +288,7 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        // print("scrollview end decelerating")
+        // This delegate will be called, when user reaches at the end of scrollview content size. This will up custom view up to after animation step, if it remains undone.
         
         // top bar shouldn't be allowed to scroll in certain circumstances. please check this instance declaration for more information.
         guard isAllowTopbarAnimation else{
@@ -296,15 +297,17 @@ extension KJNavigationViewAnimation: KJNavigaitonViewScrollviewDelegate {
         
         if self.enumScrollPosition == .up {
             UIView.animate(withDuration: 0.1, animations: {
-                self.downCustomView()
+                self.upCustomView()
             })
         }
     }
     
+    
     /*
      If your scroll didn't end properly, scrollViewDidEndDragging and scrollViewDidEndDecelerating delegates will handle it to scroll down perfectly.
      */
-    func downCustomView() {
+    func upCustomView() {
+        
         constraintHeightOfNavigationView.constant = CGFloat(HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION)
         countOfDidScrollDown = HEIGHT_OF_CUSTOMVIEW_AFTER_ANIMATION
         
