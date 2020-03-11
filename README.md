@@ -1,3 +1,8 @@
+> **THIS PROJECT IS NO LONGER MAINTAINED.
+SOON WILL COME UP WITH SWIFTUI**
+
+---
+
 # KJNavigationViewAnimation
 
 [![Twitter: @KiranJasvanee](https://img.shields.io/badge/contact-@kiranjasvanee-blue.svg?style=flat)](https://twitter.com/Kiranjasvanee)
